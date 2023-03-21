@@ -7,6 +7,14 @@ public class Student {
         this.surname = surname;
     }
 
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                '}';
+    }
+
     public String getName() {
         return name;
     }
@@ -15,6 +23,5 @@ public class Student {
         return surname;
     }
 
-    //"jdbc:mysql://localhost/newdb?" +
-    //                    "user='root'&password=c620918fazuKl420"
+
 }
