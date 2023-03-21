@@ -18,6 +18,9 @@ public class Main {
 
             String querySelectItaly = "SELECT * FROM `italian_students`";
             String querySelectGermany = "SELECT * FROM `german_students`";
+
+            System.out.println("-----------Italian Students------------------");
+
             if(state.execute(querySelectItaly)){
                 res = state.getResultSet();
                 while (res.next()){
@@ -27,6 +30,7 @@ public class Main {
                     System.out.println(italianStudents);
                 }
             }
+            System.out.println("-----------German Students------------------");
             if (state.execute(querySelectGermany)) {
                 res = state.getResultSet();
                 while (res.next()){
