@@ -20,26 +20,29 @@ public class Main {
             String querySelectGermany = "SELECT * FROM `german_students`";
 
             System.out.println("-----------Italian Students------------------");
-
+            
+            List<Student> italianStudents = new ArrayList<>();
             if(state.execute(querySelectItaly)){
                 res = state.getResultSet();
                 while (res.next()){
                     Student studentsItaly = new Student(res.getString("first_name"),res.getString("last_name"));
-                    List<Student> italianStudents = new ArrayList<>();
                     italianStudents.add(studentsItaly);
-                    System.out.println(italianStudents);
                 }
             }
+            System.out.println(italianStudents);
+
             System.out.println("-----------German Students------------------");
+            
+            List<Student> germanStudents = new ArrayList<>();
             if (state.execute(querySelectGermany)) {
                 res = state.getResultSet();
                 while (res.next()){
                     Student studentsGermany = new Student(res.getString("first_name"),res.getString("last_name"));
-                    List<Student> germanStudents = new ArrayList<>();
                     germanStudents.add(studentsGermany);
-                    System.out.println(germanStudents);
                 }
             }
+            System.out.println(germanStudents);
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
